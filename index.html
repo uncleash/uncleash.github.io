@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sergey Lebedev | Solutions architect, contact center and CX</title>
+<meta name="description" content="Solutions architect and developer with 25 years in contact center technology at Genesys. Genesys Cloud, AWS, Node.js, Vue.js, conversational AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF2F4; --surface:#FFFFFF; --ink:#16212B; --muted:#4F5D69;
+  --line:#C9D3DA; --accent:#0B6E5C; --signal:#C2570C;
+  --head:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#10181F; --surface:#17222B; --ink:#E7EEF2; --muted:#9FB0BC; --line:#2C3B47; --accent:#4FC3A8; --signal:#F29A5B;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.65}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+header.top{padding:20px 0;border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:12px}
+.name{font-family:var(--head);font-weight:700;font-size:1.05rem;letter-spacing:.01em}
+nav a{font-family:var(--head);font-weight:500;font-size:.95rem;margin-left:20px;color:var(--ink);text-decoration:none}
+nav a:hover{color:var(--accent);text-decoration:underline}
+.hero{padding:72px 0 40px}
+h1{font-family:var(--head);font-weight:700;font-size:clamp(2.1rem,5.5vw,3.5rem);line-height:1.08;letter-spacing:-.02em;margin:0 0 24px;max-width:16em}
+.lede{max-width:34em;color:var(--muted);font-size:1.15rem;margin:0 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{font-family:var(--head);font-weight:500;font-size:1rem;padding:11px 20px;border-radius:6px;text-decoration:none;border:1.5px solid var(--ink);color:var(--ink)}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn:hover{border-color:var(--accent)}
+.btn.primary:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+/* routing diagram: the one memorable element */
+.flow{margin:48px 0 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 16px 12px}
+.flow svg{width:100%;height:auto;display:block}
+.flow text{font-family:var(--head);font-size:13px;fill:var(--ink)}
+.flow .sub{font-family:var(--body);font-size:11px;fill:var(--muted)}
+.flow .node{fill:var(--bg);stroke:var(--ink);stroke-width:1.5}
+.flow .track{stroke:var(--line);stroke-width:2;stroke-dasharray:5 5;fill:none}
+.flow .dot{fill:var(--signal)}
+.flow figcaption{font-size:.9rem;color:var(--muted);margin:8px 4px 4px}
+section{padding:56px 0 8px}
+h2{font-family:var(--head);font-weight:700;font-size:1.7rem;letter-spacing:-.01em;margin:0 0 20px}
+h3{font-family:var(--head);font-weight:500;font-size:1.1rem;margin:0 0 4px}
+p{margin:0 0 16px}
+.about p{max-width:36em}
+.timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.timeline li{padding:0 0 26px 24px;position:relative}
+.timeline li::before{content:"";position:absolute;left:-7px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.when{font-family:var(--head);font-size:.9rem;color:var(--muted);margin:0 0 4px}
+.timeline p{margin:0;max-width:36em}
+.work{display:grid;gap:28px 40px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.work p{color:var(--muted);margin:0}
+.stack dl{margin:0;display:grid;grid-template-columns:150px 1fr;gap:10px 20px}
+.stack dt{font-family:var(--head);font-weight:500}
+.stack dd{margin:0;color:var(--muted)}
+ul.plain{margin:0;padding-left:20px}
+ul.plain li{margin-bottom:6px}
+footer{margin-top:64px;padding:32px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
+@media (max-width:560px){
+  body{font-size:17px}
+  nav a{margin:0 16px 0 0}
+  .stack dl{grid-template-columns:1fr;gap:2px}
+  .stack dd{margin-bottom:12px}
+  .hero{padding-top:48px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <span class="name">Sergey Lebedev</span>
+    <nav aria-label="Main">
+      <a href="#experience">Experience</a>
+      <a href="#work">Work</a>
+      <a href="#stack">Stack</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="hero">
+    <h1>Solutions architect for contact center and customer experience.</h1>
+    <p class="lede">I spent 25 years at Genesys, from Tier 3 support to global pre-sales to building on Genesys Cloud and AWS. I design integrations, build the demos and proof-of-concept environments that show them working, and explain the architecture to engineers and executives alike.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://www.linkedin.com/in/sergeylebedev001">LinkedIn profile</a>
+      <a class="btn" href="https://github.com/uncleash">GitHub repositories</a>
+    </div>
+
+    <figure class="flow" aria-labelledby="flowcap">
+      <svg viewBox="0 0 760 130" role="img" aria-label="Diagram: a customer interaction passes through a Genesys Cloud flow, an AWS Lambda function, and into an enterprise system.">
+        <path id="route" class="track" d="M70 56 H690"/>
+        <g>
+          <rect class="node" x="10" y="30" width="120" height="52" rx="8"/>
+          <text x="70" y="52" text-anchor="middle">Customer</text>
+          <text class="sub" x="70" y="69" text-anchor="middle">voice, chat, digital</text>
+        </g>
+        <g>
+          <rect class="node" x="200" y="30" width="130" height="52" rx="8"/>
+          <text x="265" y="52" text-anchor="middle">Genesys Cloud</text>
+          <text class="sub" x="265" y="69" text-anchor="middle">Architect flow, AVA</text>
+        </g>
+        <g>
+          <rect class="node" x="430" y="30" width="120" height="52" rx="8"/>
+          <text x="490" y="52" text-anchor="middle">AWS</text>
+          <text class="sub" x="490" y="69" text-anchor="middle">Lambda, DynamoDB</text>
+        </g>
+        <g>
+          <rect class="node" x="620" y="30" width="130" height="52" rx="8"/>
+          <text x="685" y="52" text-anchor="middle">Enterprise system</text>
+          <text class="sub" x="685" y="69" text-anchor="middle">CRM, data, APIs</text>
+        </g>
+        <circle class="dot" r="6" cy="56" cx="70">
+          <animate attributeName="cx" values="70;265;490;685" keyTimes="0;.33;.66;1" dur="5s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+      <figcaption id="flowcap">The shape of most of my work: an interaction enters the contact center platform and reaches the systems that can act on it.</figcaption>
+    </figure>
+  </div>
+
+  <section class="about" id="about">
+    <h2>About</h2>
+    <p>My career is one platform seen from four sides: supporting it, marketing it, selling it, and building on it. That means I know how Genesys behaves in production, how customers describe what they need, and how to turn that into an architecture that holds up.</p>
+    <p>Lately that work includes conversational AI: virtual agents on Genesys AVA, and Claude, Cursor, and GitHub Copilot in my everyday development.</p>
+    <p><strong>Open to</strong> Solutions Architect and pre-sales / solutions engineering roles in contact center, CX, and conversational AI.</p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience at Genesys</h2>
+    <ul class="timeline">
+      <li>
+        <h3>Enterprise Developer</h3>
+        <p class="when">Jun 2024 to Oct 2026, remote</p>
+        <p>Genesys Cloud integrations, end-to-end solution design, and full-stack development. Created virtual agents with Genesys AVA, built high-impact demo scenarios, and took part in tech sales projects.</p>
+      </li>
+      <li>
+        <h3>Principal Global Technical Sales Engineer</h3>
+        <p class="when">Jan 2017 to Jun 2024</p>
+        <p>Built proof-of-concept environments on Genesys Cloud and Genesys Engage, vertical demo sites, and demo mobile apps. Worked with Architect, Dialog Engine, and Google Dialogflow.</p>
+      </li>
+      <li>
+        <h3>Principal Technical Marketing Engineer</h3>
+        <p class="when">Jul 2010 to Jan 2017</p>
+        <p>Developed native Android and iOS demo apps and cross-platform apps with PhoneGap, integrated with Genesys solutions.</p>
+      </li>
+      <li>
+        <h3>Principal Technical Support Engineer</h3>
+        <p class="when">Feb 2001 to Jul 2010, Daly City, CA</p>
+        <p>Tier 3 support for enterprise contact centers. Troubleshot customer problems, recommended best practices, worked with developers and QA, and wrote troubleshooting tools in C#.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="work">
+    <h2>Selected work</h2>
+    <div class="work">
+      <div>
+        <h3>Sales demo portal</h3>
+        <p>Helped build the web portal that sales engineers use to configure and generate demos. Vue, Node.js, AWS Lambda, MongoDB, MS SQL. More than 3,000 users.</p>
+      </div>
+      <div>
+        <h3>Virtual agents on Genesys AVA</h3>
+        <p>Created agentic virtual agents on Genesys Cloud, and AI skills and commands that make repeat development tasks faster.</p>
+      </div>
+      <div>
+        <h3>Mobile demo apps</h3>
+        <p>Native Android and iOS, then PhoneGap and NativeScript with Vue, used in customer engagements to show Genesys integrations working.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stack" id="stack">
+    <h2>Stack</h2>
+    <dl>
+      <dt>Platforms</dt><dd>Genesys Cloud, Genesys Engage, Architect, Dialog Engine, Google Dialogflow</dd>
+      <dt>Cloud</dt><dd>AWS Lambda, API Gateway, DynamoDB, S3, SAM, Synthetics canaries, Docker</dd>
+      <dt>Development</dt><dd>JavaScript, TypeScript, Node.js, Vue.js, NativeScript, Playwright</dd>
+      <dt>AI tooling</dt><dd>Anthropic Claude, Cursor with Figma MCP, GitHub Copilot, VS Code</dd>
+    </dl>
+  </section>
+
+  <section id="credentials">
+    <h2>Certifications and education</h2>
+    <ul class="plain">
+      <li>Genesys Cloud Certified Professional, 2025 (valid to Nov 2027)</li>
+      <li>Genesys Cloud CX: Developer, 2023</li>
+      <li>AWS Cloud Practitioner Essentials, 2018</li>
+      <li>Genesys Certified Professional (2002), Oracle Certified Professional (2001), Microsoft Certified Professional (2000)</li>
+      <li>MS Computer Science, Saint Petersburg Naval College of Radio Electronics</li>
+      <li>UC Berkeley Extension: Leadership and Management; Professional Communication</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>The best way to reach me is <a href="https://www.linkedin.com/in/sergeylebedev001">LinkedIn</a>. Code is on <a href="https://github.com/uncleash">GitHub</a>.</p>
+  </section>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">Sergey Lebedev, United States (remote)</div>
+</footer>
+</body>
+</html>
